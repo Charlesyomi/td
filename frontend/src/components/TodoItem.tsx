@@ -13,14 +13,23 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onUpdate, onDelete }) => {
   const [status, setStatus] = useState(todo.status);
 
   const handleUpdate = async () => {
-    await updateTodo(todo.id, { title, status });
-    setIsEditing(false);
-    onUpdate();
+    try {
+      await updateTodo(todo.id, { title, status });
+      setIsEditing(false);
+      onUpdate();
+    } catch (error) {
+      console.error('Failed to update todo:', error);
+    }
   };
 
   const handleDelete = async () => {
-    await deleteTodo(todo.id);
-    onDelete();
+    try {
+      await deleteTodo(todo.id);
+      onDelete();
+    }
+    catch (error) {
+      console.error('Failed to delete todo:', error);
+    }
   };
 
   return (
@@ -45,9 +54,10 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onUpdate, onDelete }) => {
           <input
             type="checkbox"
             checked={status}
-            onChange={(e) => {
-              setStatus(e.target.checked);
-              updateTodo(todo.id, { status: e.target.checked });
+            onChange={async (e) => {
+              const newStatus = e.target.checked;
+              setStatus(newStatus);
+              await updateTodo(todo.id, { status: newStatus });
               onUpdate();
             }}
           />

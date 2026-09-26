@@ -9,11 +9,15 @@ const AddTodo: React.FC<AddTodoProps> = ({ onAdd }) => {
   const [title, setTitle] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!title.trim()) return;
-    await createTodo({ title });
-    setTitle('');
-    onAdd();
+    try {
+      e.preventDefault();
+      if (!title.trim()) return;
+      await createTodo({ title });
+      setTitle('');
+      onAdd();
+    } catch (error) {
+      console.error('Failed to add todo:', error)
+    }
   };
 
   return (
