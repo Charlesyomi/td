@@ -1,33 +1,125 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Design Tokens - Dark Theme */
+:root {
+  /* Colors - Semantic names for easy theming */
+  --bg: #0a0a0a;
+  --surface: #121212;
+  --surface-hover: #1a1a1a;
+  --border: #333333;
+  --text: #ffffff;
+  --text-muted: #999999;
+  --accent: #4a9eff;
+  --accent-contrast: #ffffff;
+  --danger: #ff4444;
+  --success: #44ff44;
+  --focus-ring: #4a9eff;
+  
+  /* Spacing - 4px base grid */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  
+  /* Typography - System font stacks */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-lg: 18px;
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  
+  /* Shape */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --border-width: 1px;
+  
+  color-scheme: dark;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+  line-height: var(--leading-tight);
+}
+
+h1 { font-size: var(--text-lg); }
+h2 { font-size: var(--text-md); }
+h3 { font-size: var(--text-sm); }
 
 ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 li {
-  margin: 10px 0;
+  margin: var(--space-1) 0;
+}
+
+input[type="text"],
+input[type="checkbox"] {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-sm);
 }
 
 input[type="text"] {
-  padding: 8px;
-  margin-right: 8px;
+  padding: var(--space-2);
+  width: 100%;
+}
+
+input[type="text"]:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+input[type="checkbox"] {
+  width: var(--space-4);
+  height: var(--space-4);
+  cursor: pointer;
 }
 
 button {
-  padding: 8px;
-  margin: 0 4px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  padding: var(--space-2) var(--space-4);
+  background-color: var(--surface);
+  color: var(--text);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-sm);
   cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--surface-hover);
+}
+
+button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
 }
