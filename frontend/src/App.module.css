@@ -1,0 +1,19 @@
+/* Layout constants */
+:root {
+  --container-max-width: 760px;
+}
+
+.shell {
+  padding: var(--space-4) var(--space-2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-max-width);
+  padding-top: var(--space-6);
+  padding-inline: var(--space-2);
+}

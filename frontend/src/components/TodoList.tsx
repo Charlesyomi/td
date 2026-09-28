@@ -35,26 +35,39 @@ const TodoList: React.FC = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (
     <div>
-      <h1>Todo List</h1>
-      <AddTodo onAdd={handleAdd} />
-      <ul>
-        {todos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            onUpdate={handleUpdate}
-            onDelete={handleDelete}
-          />
-        ))}
-      </ul>
+      <div className="header">
+        <h1>Tasks</h1>
+        <p className="count">{todos.filter(t => !t.status).length} remaining</p>
+      </div>
+      <div className="listSurface">
+        {todos.length === 0 ? (
+          <div className="emptyState">
+            <p>No tasks yet</p>
+            <p>Add a task below to get started.</p>
+          </div>
+        ) : (
+          <ul>
+            {todos.map((todo) => (
+              <TodoItem
+                key={todo.id}
+                todo={todo}
+                onUpdate={handleUpdate}
+                onDelete={handleDelete}
+              />
+            ))}
+          </ul>
+        )}
+      </div>
+      <div className="addTodoWrapper">
+        <AddTodo onAdd={handleAdd} />
+      </div>
     </div>
   );
 };
 
 export default TodoList;
-
