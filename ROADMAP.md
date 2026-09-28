@@ -3,13 +3,13 @@ Submittable at any point = main passes CI, is deployed, and the README is curren
 One item per branch. Prompt Aider in phases and review each phase.
 
 ## Phase 1: Presentable and safe
-- [ ] 1.1 README: live URLs, architecture, how to run and test (S)
-- [ ] 1.2 CI: pytest + frontend build on every PR (S)
+- [x] 1.1 README: live URLs, architecture, how to run and test (S)
+- [x] 1.2 CI: pytest + frontend build on every PR (S)
 - [ ] 1.3 Design tokens + dark theme (S)
 - [ ] 1.4 Layout + TodoItem restyle: dense rows, status marker, #id, timestamp (M)
 - [ ] 1.5 Visible loading, empty and error states (S)
 - [ ] 1.6 Input validation: title max length, empty title rejected server-side, with tests (S)
-- [ ] 1.7 /health endpoint + housekeeping (lifespan, datetime default, Pydantic warnings) (S)
+- [ ] 1.7 /health endpoint + housekeeping (lifespan, datetime default, Pydantic warnings) FRONTEND_ORIGIN default in settings.py(S)
 
 ## Phase 2: Identity and ownership
 - [ ] 2.1 Alembic migrations, baselined on the current schema (M)
