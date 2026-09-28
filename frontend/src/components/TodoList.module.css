@@ -1,0 +1,53 @@
+/* Header block */
+.header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: var(--text-lg);
+}
+
+.count {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--text-sm);
+}
+
+/* List surface */
+.listSurface {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* Reset ul */
+.listSurface ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Empty state */
+.emptyState {
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.emptyState p {
+  margin: var(--space-2) 0;
+}
+
+/* Loading state */
+.loading {
+  color: var(--text-muted);
+}
+
+/* AddTodo wrapper with gap */
+.addTodoWrapper {
+  margin-top: var(--space-4);
+}
