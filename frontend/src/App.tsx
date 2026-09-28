@@ -1,11 +1,12 @@
-
 import TodoList from './components/TodoList';
 
 function App() {
   return (
-    <div className="App">
-      <TodoList />
-    </div>
+    <main className="shell">
+      <div className="container">
+        <TodoList />
+      </div>
+    </main>
   );
 }
 
