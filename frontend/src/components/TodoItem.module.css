@@ -1,0 +1,111 @@
+/* Layout constants */
+.min-height: 44px;
+
+/* Base row styles */
+.row {
+  display: flex;
+  align-items: center;
+  min-height: var(--min-height);
+  padding: var(--space-2) 0;
+  border-top: 1px solid var(--border);
+}
+
+.row:first-child {
+  border-top: none;
+}
+
+/* Row hover state */
+.row:hover {
+  background-color: var(--surface-hover);
+}
+
+/* Done state styling */
+[data-status="done"] .title {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+/* Title styling */
+.title {
+  flex: 1;
+  font-size: var(--text-md);
+  font-weight: normal;
+  color: var(--text);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  margin: 0 var(--space-2);
+}
+
+/* Checkbox styling */
+.checkbox {
+  flex-shrink: 0;
+  margin-right: var(--space-2);
+}
+
+/* Button styling */
+.button {
+  flex-shrink: 0;
+  padding: var(--space-1) var(--space-3);
+  background-color: transparent;
+  color: var(--text-muted);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  font-weight: normal;
+}
+
+/* Button focus state */
+.button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Button hover and focus-within states */
+.row:hover .button,
+.row:focus-within .button {
+  color: var(--text);
+}
+
+/* Delete button specific styling */
+.button.delete {
+  color: var(--danger);
+}
+
+.button.delete:hover,
+.button.delete:focus-visible {
+  color: var(--danger);
+}
+
+/* Input styling */
+.input {
+  flex: 1;
+  margin: 0 var(--space-2);
+  padding: var(--space-2);
+  background-color: var(--surface);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: var(--text-md);
+  color: var(--text);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Edit mode layout */
+.edit-mode {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.edit-mode .input {
+  flex: 1;
+}
+
+.edit-mode .checkbox {
+  margin-right: 0;
+}
