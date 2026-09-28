@@ -1,0 +1,9 @@
+
+## Deployment Notes
+
+- Backend can be deployed on Railway with environment variables configured
+- Frontend can be deployed on Vercel
+- Database uses Supabase in production
+- Ensure CORS origins are properly configured for the deployed frontend URL
+
+For detailed development roadmap, see [ROADMAP.md](ROADMAP.md).
