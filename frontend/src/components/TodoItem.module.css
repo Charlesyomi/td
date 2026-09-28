@@ -1,11 +1,9 @@
-/* Layout constants */
-.min-height: 44px;
-
 /* Base row styles */
 .row {
   display: flex;
   align-items: center;
-  min-height: var(--min-height);
+  min-height: 44px;
+  /* min-height: var(--min-height); */
   padding: var(--space-2) 0;
   border-top: 1px solid var(--border);
 }
